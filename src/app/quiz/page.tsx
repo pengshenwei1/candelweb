@@ -6,7 +6,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartSidebar from "@/components/CartSidebar";
-import { CartProvider, useCart } from "@/context/CartContext";
+import { useCart } from "@/context/CartContext";
 import { products, Product } from "@/data/products";
 
 interface QuizQuestion {
@@ -312,9 +312,5 @@ function QuizContent() {
 }
 
 export default function Quiz() {
-  return (
-    <CartProvider>
-      <QuizContent />
-    </CartProvider>
-  );
+  return <QuizContent />;
 }

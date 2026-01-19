@@ -5,7 +5,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartSidebar from "@/components/CartSidebar";
-import { CartProvider, useCart } from "@/context/CartContext";
+import { useCart } from "@/context/CartContext";
 
 function CartPage() {
   const { items, removeItem, updateQuantity, totalPrice, clearCart } = useCart();
@@ -213,9 +213,5 @@ function CartPage() {
 }
 
 export default function Cart() {
-  return (
-    <CartProvider>
-      <CartPage />
-    </CartProvider>
-  );
+  return <CartPage />;
 }

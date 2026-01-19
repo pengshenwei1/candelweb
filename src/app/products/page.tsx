@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartSidebar from "@/components/CartSidebar";
 import ProductCard from "@/components/ProductCard";
-import { CartProvider } from "@/context/CartContext";
 import { products, scentCategories } from "@/data/products";
 
 function ProductsPage() {
@@ -219,9 +218,5 @@ function ProductsPage() {
 }
 
 export default function Products() {
-  return (
-    <CartProvider>
-      <ProductsPage />
-    </CartProvider>
-  );
+  return <ProductsPage />;
 }

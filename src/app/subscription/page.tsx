@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartSidebar from "@/components/CartSidebar";
-import { CartProvider } from "@/context/CartContext";
 import { subscriptionPlans } from "@/data/products";
 
 function SubscriptionPage() {
@@ -301,9 +300,5 @@ function SubscriptionPage() {
 }
 
 export default function Subscription() {
-  return (
-    <CartProvider>
-      <SubscriptionPage />
-    </CartProvider>
-  );
+  return <SubscriptionPage />;
 }

@@ -32,15 +32,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Load cart from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem("akari-cart");
-    if (savedCart) {
-      setItems(JSON.parse(savedCart));
+    try {
+      const savedCart = localStorage.getItem("akari-cart");
+      if (savedCart) {
+        setItems(JSON.parse(savedCart));
+      }
+    } catch (error) {
+      console.error("Failed to load cart from localStorage:", error);
     }
   }, []);
 
   // Save cart to localStorage on change
   useEffect(() => {
-    localStorage.setItem("akari-cart", JSON.stringify(items));
+    try {
+      localStorage.setItem("akari-cart", JSON.stringify(items));
+    } catch (error) {
+      console.error("Failed to save cart to localStorage:", error);
+    }
   }, [items]);
 
   const addItem = (item: Omit<CartItem, "quantity">) => {

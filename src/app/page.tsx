@@ -7,7 +7,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartSidebar from "@/components/CartSidebar";
 import ProductCard from "@/components/ProductCard";
-import { CartProvider } from "@/context/CartContext";
 import { products } from "@/data/products";
 
 function HomePage() {
@@ -362,9 +361,5 @@ function HomePage() {
 }
 
 export default function Home() {
-  return (
-    <CartProvider>
-      <HomePage />
-    </CartProvider>
-  );
+  return <HomePage />;
 }

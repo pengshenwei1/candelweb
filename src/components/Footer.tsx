@@ -62,20 +62,22 @@ export default function Footer() {
               ブランド
             </h4>
             <ul className="space-y-3">
-              {[
-                { href: "/about", label: "私たちについて" },
-                { href: "/materials", label: "素材へのこだわり" },
-                { href: "/contact", label: "お問い合わせ" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#E8E0D5]/80 hover:text-[#F5F1EB] transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {/* Links to be added when pages are created */}
+              <li>
+                <span className="text-sm text-[#E8E0D5]/50 cursor-default">
+                  私たちについて
+                </span>
+              </li>
+              <li>
+                <span className="text-sm text-[#E8E0D5]/50 cursor-default">
+                  素材へのこだわり
+                </span>
+              </li>
+              <li>
+                <span className="text-sm text-[#E8E0D5]/50 cursor-default">
+                  お問い合わせ
+                </span>
+              </li>
             </ul>
           </div>
 
